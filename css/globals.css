@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'inter';
+    background-color: #f3f9f6;
+}
+
+.swiper-button-disabled {
+    opacity: 0.5;
+}
+
+.parallax-slider .parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .parallax-slider .swiper-pagination .swiper-pagination-bullet {
+    border-radius: 0px !important;
+    background-color: #76b375 !important;
+    width: 80px;
+    margin-bottom: 60px !important;
+  }
+  @media only screen and (max-width: 600px) {
+    .parallax-slider .swiper-pagination .swiper-pagination-bullet {
+        width: 40px;
+        height: 6px;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        display: none !important;
+    }
+  }

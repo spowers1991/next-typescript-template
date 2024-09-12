@@ -1,0 +1,354 @@
+[
+  {
+    "id": "1",
+    "title": "Product 1",
+    "description": "Description for Product 1.",
+    "handle": "product-1",
+    "quantity": 0,
+    "price": "10.00",
+    "collections": [
+      {
+        "id": "collection1",
+        "handle": "category1",
+        "title": "Category 1"
+      },
+      {
+        "id": "collection2",
+        "handle": "category2",
+        "title": "Category 2"
+      }
+    ],
+    "images": [
+      {
+        "id": "image1",
+        "originalSrc": "https://placehold.co/600x400",
+        "height": 100,
+        "width": 100,
+        "altText": "Image 1"
+      }
+    ],
+    "variants": [
+      {
+        "id": "variant1",
+        "title": "Small / Black",
+        "quantity": 0,
+        "price": "12.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Small" },
+          { "name": "Color", "value": "Black" }
+        ],
+        "stock": {
+          "available": true,
+          "quantity": 5
+        }
+      },
+      {
+        "id": "variant2",
+        "title": "Medium / Black",
+        "quantity": 0,
+        "price": "14.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Medium" },
+          { "name": "Color", "value": "Black" }
+        ],
+        "stock": {
+          "available": true,
+          "quantity": 10
+        }
+      }
+    ],
+    "seo": {
+      "title": "Product 1",
+      "description": "Description for Product 1.",
+      "keywords": "product, ecommerce, shop, Product 1"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Product 2",
+    "description": "Description for Product 2.",
+    "handle": "product-2",
+    "quantity": 0,
+    "price": "20.00",
+    "collections": [
+      {
+        "id": "collection1",
+        "handle": "category1",
+        "title": "Category 1"
+      },
+      {
+        "id": "collection3",
+        "handle": "category3",
+        "title": "Category 3"
+      }
+    ],
+    "images": [
+      {
+        "id": "image2",
+        "originalSrc": "https://placehold.co/600x400",
+        "height": 100,
+        "width": 100,
+        "altText": "Image 2"
+      }
+    ],
+    "variants": [
+      {
+        "id": "variant3",
+        "title": "Large / White",
+        "quantity": 0,
+        "price": "26.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Large" },
+          { "name": "Color", "value": "White" }
+        ],
+        "stock": {
+          "available": false,
+          "quantity": 4
+        }
+      },
+      {
+        "id": "variant4",
+        "title": "Small / Blue",
+        "quantity": 0,
+        "price": "23.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Small" },
+          { "name": "Color", "value": "Blue" }
+        ],
+        "stock": {
+          "available": false,
+          "quantity": 4
+        }
+      },
+      {
+        "id": "variant5",
+        "title": "Medium / Blue",
+        "quantity": 0,
+        "price": "25.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Medium" },
+          { "name": "Color", "value": "Blue" }
+        ],
+        "stock": {
+          "available": false,
+          "quantity": 4
+        }
+      },
+      {
+        "id": "variant6",
+        "title": "Large / Blue",
+        "quantity": 0,
+        "price": "27.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Large" },
+          { "name": "Color", "value": "Blue" }
+        ],
+        "stock": {
+          "available": false,
+          "quantity": 4
+        }
+      }
+    ],
+    "seo": {
+      "title": "Product 2",
+      "description": "Description for Product 2.",
+      "keywords": "product, ecommerce, shop, Product 2"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Product 3",
+    "description": "Description for Product 3.",
+    "handle": "product-3",
+    "quantity": 0,
+    "price": "30.00",
+    "collections": [
+      {
+        "id": "collection2",
+        "handle": "category2",
+        "title": "Category 2"
+      },
+      {
+        "id": "collection3",
+        "handle": "category3",
+        "title": "Category 3"
+      }
+    ],
+    "images": [
+      {
+        "id": "image3",
+        "originalSrc": "https://placehold.co/600x400",
+        "height": 100,
+        "width": 100,
+        "altText": "Image 3"
+      }
+    ],
+    "variants": [
+      {
+        "id": "variant7",
+        "title": "Small / Red",
+        "quantity": 0,
+        "price": "32.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Small" },
+          { "name": "Color", "value": "Red" }
+        ],
+        "stock": {
+          "available": false,
+          "quantity": 4
+        }
+      },
+      {
+        "id": "variant8",
+        "title": "Medium / Red",
+        "quantity": 0,
+        "price": "34.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Medium" },
+          { "name": "Color", "value": "Red" }
+        ],
+        "stock": {
+          "available": false,
+          "quantity": 4
+        }
+      },
+      {
+        "id": "variant9",
+        "title": "Large / Red",
+        "quantity": 0,
+        "price": "36.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Large" },
+          { "name": "Color", "value": "Red" }
+        ],
+        "stock": {
+          "available": true,
+          "quantity": 1
+        }
+      }
+    ],
+    "seo": {
+      "title": "Product 3",
+      "description": "Description for Product 3.",
+      "keywords": "product, ecommerce, shop, Product 3"
+    }
+  },
+  {
+    "id": "4",
+    "title": "Product 4",
+    "description": "Description for Product 4.",
+    "handle": "product-4",
+    "quantity": 0,
+    "price": "40.00",
+    "collections": [
+      {
+        "id": "collection4",
+        "handle": "category4",
+        "title": "Category 4"
+      }
+    ],
+    "images": [
+      {
+        "id": "image4",
+        "originalSrc": "https://placehold.co/600x400",
+        "height": 100,
+        "width": 100,
+        "altText": "Image 4"
+      }
+    ],
+    "variants": [
+      {
+        "id": "variant10",
+        "title": "Small / Yellow",
+        "quantity": 0,
+        "price": "42.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Small" },
+          { "name": "Color", "value": "Yellow" }
+        ],
+        "stock": {
+          "available": true,
+          "quantity": 5
+        }
+      },
+      {
+        "id": "variant11",
+        "title": "Medium / Yellow",
+        "quantity": 0,
+        "price": "44.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Medium" },
+          { "name": "Color", "value": "Yellow" }
+        ],
+        "stock": {
+          "available": true,
+          "quantity": 10
+        }
+      }
+    ],
+    "seo": {
+      "title": "Product 4",
+      "description": "Description for Product 4.",
+      "keywords": "product, ecommerce, shop, Product 4"
+    }
+  },
+  {
+    "id": "5",
+    "title": "Product 5",
+    "description": "Description for Product 5.",
+    "handle": "product-5",
+    "quantity": 0,
+    "price": "50.00",
+    "collections": [
+      {
+        "id": "collection5",
+        "handle": "category5",
+        "title": "Category 5"
+      }
+    ],
+    "images": [
+      {
+        "id": "image5",
+        "originalSrc": "https://placehold.co/600x400",
+        "height": 100,
+        "width": 100,
+        "altText": "Image 5"
+      }
+    ],
+    "variants": [
+      {
+        "id": "variant12",
+        "title": "Small / Green",
+        "quantity": 0,
+        "price": "52.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Small" },
+          { "name": "Color", "value": "Green" }
+        ],
+        "stock": {
+          "available": true,
+          "quantity": 5
+        }
+      },
+      {
+        "id": "variant13",
+        "title": "Medium / Green",
+        "quantity": 0,
+        "price": "54.00",
+        "selectedOptions": [
+          { "name": "Size", "value": "Medium" },
+          { "name": "Color", "value": "Green" }
+        ],
+        "stock": {
+          "available": true,
+          "quantity": 10
+        }
+      }
+    ],
+    "seo": {
+      "title": "Product 5",
+      "description": "Description for Product 5.",
+      "keywords": "product, ecommerce, shop, Product 5"
+    }
+  }
+]
