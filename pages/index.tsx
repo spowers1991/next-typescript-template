@@ -1,4 +1,4 @@
-import { Product } from '@/lib/products/types';
+import { Product } from '@/lib/products/Product';
 import Filters from '@/components/filters/Filters'
 
 interface HomeProps {

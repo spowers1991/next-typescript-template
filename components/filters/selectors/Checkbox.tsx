@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Product } from '@/lib/products/types' 
+import { Product } from '@/lib/products/Product' 
 import { extractPropertiesNames } from '../helpers/extractPropertiesNames';
 
 interface CheckboxProps {

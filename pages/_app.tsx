@@ -3,7 +3,7 @@ import { getAllProducts } from "@/lib/api/products/getAllProducts";
 
 // Context Providers
 // import { CartProvider } from '@/lib/cart/CartContext';
-import { Product } from '@/lib/products/types'
+import { Product } from '@/lib/products/Product'
 
 // CSS
 import '@/css/globals.css';
