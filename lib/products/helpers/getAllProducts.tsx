@@ -1,6 +1,6 @@
 // Import products data
 import products from '@/data/product/productData.json';
-import { Product } from '@/lib/products/Product';
+import { Product } from '@/lib/products/types/Product';
 
 // This function fetches products and returns them
 export async function getAllProducts(): Promise<Product[]> {

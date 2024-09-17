@@ -1,9 +1,9 @@
 // API Requests
-import { getAllProducts } from "@/lib/api/products/getAllProducts";
+import { getAllProducts } from "@/lib/products/helpers/getAllProducts";
 
 // Context Providers
 // import { CartProvider } from '@/lib/cart/CartContext';
-import { Product } from '@/lib/products/Product'
+import { Product } from '@/lib/products/types/Product'
 
 // CSS
 import '@/css/globals.css';

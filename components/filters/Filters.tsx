@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Product } from '@/lib/products/Product';
+import { Product } from '@/lib/products/types/Product';
 import Searchbar from "./selectors/Searchbar";
 import Checkbox from './selectors/Checkbox';
 import { updateFilters } from "./actions/updateFilters";

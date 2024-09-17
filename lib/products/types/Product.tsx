@@ -1,7 +1,7 @@
-import { Collection } from "./types/Collection";
-import { Image } from "./types/Image";
-import { Variant } from "./types/Variant";
-import { SEO } from './types/SEO'
+import { Collection } from "./Collection";
+import { Image } from "./Image";
+import { Variant } from "./Variant";
+import { SEO } from './SEO'
   
 export interface Product {
     id: string;
