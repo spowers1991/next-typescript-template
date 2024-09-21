@@ -31,22 +31,24 @@ const Filters: React.FC<FilterProps> = ({ itemsToFilter }) => {
 
 
   return (
-    <div className="container flex m-auto w-full pt-4 sm:pt-16">
+    <div className="container flex m-auto w-full">
 
-      <div className="mt-6 flex flex-col gap-6">
+      <div className="flex flex-col gap-6 w-full">
 
-        <Searchbar   
-          label={"Title"}
-          propertyToSearch={"title"}
-          filtersHandler={filtersHandler}
-        />
+        <div className='flex flex-col gap-6 bg-white p-6'>
+          <Searchbar   
+            label={"Title"}
+            propertyToSearch={"title"}
+            filtersHandler={filtersHandler}
+          />
 
-        <Checkbox   
-          itemsToFilter={itemsToFilter}
-          label={"collections"}
-          propertyToSearch={"collections"}
-          filtersHandler={filtersHandler}
-        />
+          <Checkbox   
+            itemsToFilter={itemsToFilter}
+            label={"collections"}
+            propertyToSearch={"collections"}
+            filtersHandler={filtersHandler}
+          />
+        </div>
 
         <FilteredListing filteredItems={filteredItems} />
 

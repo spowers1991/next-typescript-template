@@ -3,6 +3,9 @@ import { getAllProducts } from "@/lib/products/helpers/getAllProducts";
 
 // Context Providers
 // import { CartProvider } from '@/lib/cart/CartContext';
+import { UserProvider } from '@/lib/user/UserContext';
+
+// Context types
 import { Product } from '@/lib/products/types/Product'
 
 // CSS
@@ -22,9 +25,11 @@ interface ExtendedAppProps extends AppProps {
 function App({ Component, pageProps }: ExtendedAppProps) {
   return (
     <>
-      <Header />
-        <Component {...pageProps}  /> 
-      <Footer />
+      <UserProvider>
+        <Header />
+          <Component {...pageProps}  /> 
+        <Footer />
+      </UserProvider>
     </>
   );
 }

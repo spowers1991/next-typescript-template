@@ -2,7 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const MobileMenu = (props) => {
+
+interface MobileMenuProps {
+    status: string; 
+    mobileMenuState: (state: string) => void; 
+    globalSettings?: { content?: { menu: any[] } }; 
+  }
+
+const MobileMenu = (props: MobileMenuProps) => {
 
   const router = useRouter();
 
