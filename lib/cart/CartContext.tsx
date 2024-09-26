@@ -1,46 +1,37 @@
 import React, { createContext, useReducer, useContext, ReactNode, useEffect } from 'react';
 import { Product } from '../products/types/Product';
-import { addToCartAction } from './actions/addToCartAction'
-import { removeFromCartAction } from './actions/removeFromCartAction'
-import { getCartTotal } from './helpers/getCartTotals';
+import { updateCartAction } from './actions/updateCartAction';
+import { addProductToCart } from './actions/addProductToCart'; 
+import { updateProductQuantity } from './actions/updateProductQuantity'; 
 
 interface CartState {
   cart: Product[];
-  total: number;
 }
 
 interface CartContextProps extends CartState {
-  addToCart: (item: Product) => void;
-  removeFromCart: (item: Product) => void;
+  updateCart: (item: Product) => void;
 }
 
 const CartContext = createContext<CartContextProps>({} as CartContextProps);
 
 const initialState: CartState = {
-  cart: [],
-  total: 0,
+  cart: []
 };
 
 type CartAction =
-  | { type: 'ADD_TO_CART'; payload: Product }
-  | { type: 'REMOVE_FROM_CART'; payload: Product };
+  | { type: 'UPDATE_CART'; payload: Product };
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
-    case 'ADD_TO_CART':
-      const updatedCartAdd = [...state.cart, action.payload];
-      return {
-        ...state,
-        cart: updatedCartAdd,
-        total: getCartTotal(updatedCartAdd),
-      };
-    case 'REMOVE_FROM_CART':
-      const updatedCartRemove = state.cart.filter(item => item.id !== action.payload.id);
-      return {
-        ...state,
-        cart: updatedCartRemove,
-        total: getCartTotal(updatedCartRemove),
-      };
+    case 'UPDATE_CART':
+      const existingProductIndex = state.cart.findIndex(product => product.id === action.payload.id);
+      
+      if (existingProductIndex === -1) {
+        return addProductToCart(state, action.payload);
+      } else {
+        return updateProductQuantity(state, existingProductIndex, action.payload.quantity);
+      }
+
     default:
       return state;
   }
@@ -49,22 +40,28 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  const addToCart = (item: Product) => {
-    dispatch(addToCartAction(item));
-  };
+  // Load cart from local storage on initial render
+  useEffect(() => {
+    const localCart = localStorage.getItem('cart');
+    if (localCart) {
+      const cart: Product[] = JSON.parse(localCart);
+      // Populate state with cart from local storage
+      cart.forEach(item => dispatch({ type: 'UPDATE_CART', payload: item }));
+    }
+  }, []);
 
-  const removeFromCart = (item: Product) => {
-    dispatch(removeFromCartAction(item));
+  const updateCart = (item: Product) => {
+    dispatch(updateCartAction(item));
   };
 
   useEffect(() => {
-    console.log('Updated Cart:', state.cart);
-  }, [state.cart]); 
+    // Save cart to local storage whenever it changes
+    localStorage.setItem('cart', JSON.stringify(state.cart)); // Save cart to local storage
+  }, [state.cart]);
 
   const value: CartContextProps = {
     ...state,
-    addToCart,
-    removeFromCart,
+    updateCart,
   };
 
   return (

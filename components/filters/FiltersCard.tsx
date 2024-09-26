@@ -1,12 +1,11 @@
 import React from 'react';
-import { FilteredItem } from './types/FilteredItem'
 import Thumbnail from '../images/Thumbnail';
 import ProductPrice from '../products/ProductPrice';
 import ProductTitle from '../products/ProductTitle';
-import AddToCartForm from '../cart/AddToCartForm';
+import CartForm from '../cart/CartForm';
 
 interface FilteredItemProps{
-  filteredItem: FilteredItem;
+  filteredItem: any;
 }
 
 const FiltersCard: React.FC<FilteredItemProps> = ({ filteredItem }) => {
@@ -22,7 +21,7 @@ const FiltersCard: React.FC<FilteredItemProps> = ({ filteredItem }) => {
                 </div>
               </div>
               <div className="mt-auto">
-                <AddToCartForm product={filteredItem} />  
+                <CartForm product={filteredItem} />  
               </div>
             </div>
           </>

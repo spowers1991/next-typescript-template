@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Product } from '@/lib/products/types/Product';
 import { useCart } from '@/lib/cart/CartContext';
 
-interface AddToCartFormProps {
-  product: Omit<Product, 'quantity'>; 
+interface CartFormProps {
+  product: Product; 
 }
 
-const AddToCartForm: React.FC<AddToCartFormProps> = ({ product }) => {
-  const { addToCart } = useCart();
+const CartForm: React.FC<CartFormProps> = ({ product }) => {
+  const { cart, updateCart } = useCart();
   const [quantity, setQuantity] = useState<number>(1);
+
+  // Effect to check if the product already exists in the cart
+  useEffect(() => {
+    const existingProduct = cart.find(item => item.id === product.id);
+    if (existingProduct) {
+      setQuantity(existingProduct.quantity); // Set quantity if the product exists in cart
+    }
+  }, [cart, product.id]); // Dependency on cart and product.id
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,7 +25,7 @@ const AddToCartForm: React.FC<AddToCartFormProps> = ({ product }) => {
       ...product,
       quantity,
     };
-    addToCart(item);
+    updateCart(item);
   };
 
   return (
@@ -37,4 +45,4 @@ const AddToCartForm: React.FC<AddToCartFormProps> = ({ product }) => {
   );
 };
 
-export default AddToCartForm;
+export default CartForm;
