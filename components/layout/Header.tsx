@@ -2,26 +2,57 @@ import React from 'react';
 import Link from 'next/link';
 //import { useCart } from '@/lib/contexts/cart/CartContext'; 
 //import { getTotalQuantity } from '@/lib/contexts/cart/helpers/getTotalQuantity';
+import { useRouter } from 'next/router';
+import { useUser } from '@/lib/user/UserContext'
+import LogoutButton from '@/components/auth/LogoutButton';
 
 const Header = () => {
+ const { isLoggedIn } = useUser()  || {}
  // const { cart } = useCart();
+ const router = useRouter();
 
   return (
-    <nav className="flex w-full bg-gray-800 items-center">
-        <div className='container flex m-auto w-full p-4'>
+    <nav className="flex w-full items-center px-3">
+        <div className='container flex m-auto w-full py-4'>
             <div className="w-fit">
                 <Link href="/">
-                    <span className="flex items-center justify-center text-white">
+                    <span className={` ${router.pathname === '/' ? 'text-[#434bed]' : 'text-gray-800'} flex items-center justify-center text-2xl`}>
                         Store
                     </span>
                 </Link>
             </div>
-            <div className="group w-fit ml-auto">
-                <Link href="/cart">
-                    <span className="flex items-center justify-center text-white">
-                        <img src="/images/svgs/cartIcon.svg" /> <span> $ </span>
-                    </span>
-                </Link>          
+            <div className="group w-fit ml-auto flex gap-x-3">
+                {isLoggedIn ?
+                    <>
+                        <Link href="/account">
+                            <span className={` ${router.pathname === '/account' ? 'text-[#434bed]' : 'text-gray-800'} flex items-center justify-center `}>
+                                Account
+                            </span>
+                        </Link>
+                        <div>
+                            <span className={`text-gray-800 flex items-center justify-center `}>
+                                <span>
+                                    { isLoggedIn &&
+                                        <LogoutButton />
+                                    }
+                                </span>
+                            </span>
+                        </div> 
+                    </>
+                :
+                    <>
+                        <Link href="/register">
+                            <span className={` ${router.pathname === '/register' ? 'text-[#434bed]' : 'text-gray-800'} flex items-center justify-center `}>
+                                Register
+                            </span>
+                        </Link>
+                        <Link href="/login">
+                            <span className={` ${router.pathname === '/login' ? 'text-[#434bed]' : 'text-gray-800'} flex items-center justify-center `}>
+                                Login
+                            </span>
+                        </Link>
+                    </>
+                }         
             </div>
         </div>    
     </nav>
