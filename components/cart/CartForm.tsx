@@ -29,18 +29,23 @@ const CartForm: React.FC<CartFormProps> = ({ product }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="quantity">Quantity: </label>
+    <form onSubmit={handleSubmit} className='flex'>
+      <div className='relative bg-[#f4f4f4] border border-gray-800'>
+        <label htmlFor="quantity" className='ml-3 text-[#aaa] uppercase text-xs tracking-[1px] font-semibold  relative top-[-1px] hidden'>
+          Quantity
+        </label>
         <input
           type="number"
           id="quantity"
+          className='bg-[#f4f4f4] w-[100px] h-full focus:outline-0 text-center font-semibold'
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
           min="1"
         />
       </div>
-      <button type="submit">Add to Cart</button>
+      <button type="submit" className='p-4 bg-gray-800 text-white uppercase text-xs tracking-[1px] font-semibold'>
+        Update
+      </button>
     </form>
   );
 };

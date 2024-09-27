@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext, ReactNode } from 'react';
+import { supabase } from '@/lib/plugins/supabase/supabaseClient';
 import { User } from '@supabase/supabase-js'; 
 
 const UserContext = createContext<{
@@ -16,9 +17,20 @@ export const UserProvider = ({ children }: UserProviderProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
-    user ? setIsLoggedIn(true) : setIsLoggedIn(false) 
-    //console.log(user)
-  }, [user]);
+    const fetchData = async () => {
+      const { data } = await supabase.auth.getSession();
+      if (data?.session) {
+        setUser(data.session.user as User);
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    };
+
+    fetchData().catch(console.error);
+  }, []);
+
+  console.log(user)
 
   return (
     <UserContext.Provider 

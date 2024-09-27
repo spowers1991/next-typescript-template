@@ -14,7 +14,7 @@ const Header = () => {
  console.log(cart)
   return (
     <nav className="flex w-full items-center">
-        <div className='container flex m-auto w-full py-4'>
+        <div className='container flex m-auto w-full py-4 px-6 lg:px-0'>
             <div className="w-fit">
                 <Link href="/">
                     <span className={` ${router.pathname === '/' ? 'text-[#434bed]' : 'text-gray-800'} flex items-center justify-center text-2xl`}>
@@ -30,6 +30,11 @@ const Header = () => {
                                 Account
                             </span>
                         </Link>
+                        <Link href="/cart">
+                            <span className={` ${router.pathname === '/cart' ? 'text-[#434bed]' : 'text-gray-800'} flex items-center justify-center `}>
+                                Cart
+                            </span>
+                        </Link>
                         <div>
                             <span className={`text-gray-800 flex items-center justify-center `}>
                                 <span>
@@ -38,9 +43,6 @@ const Header = () => {
                                     }
                                 </span>
                             </span>
-                        </div> 
-                        <div>
-                        cart
                         </div> 
                     </>
                 :
