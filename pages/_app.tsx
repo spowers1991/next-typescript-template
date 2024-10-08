@@ -2,8 +2,8 @@
 import { getAllProducts } from "@/lib/products/helpers/getAllProducts";
 
 // Context Providers
-// import { CartProvider } from '@/lib/cart/CartContext';
 import { UserProvider } from '@/lib/user/UserContext';
+import { CartProvider } from "@/lib/cart/CartContext";
 
 // Context types
 import { Product } from '@/lib/products/types/Product'
@@ -26,9 +26,11 @@ function App({ Component, pageProps }: ExtendedAppProps) {
   return (
     <>
       <UserProvider>
-        <Header />
-          <Component {...pageProps}  /> 
-        <Footer />
+        <CartProvider>
+          <Header />
+            <Component {...pageProps}  /> 
+          <Footer />
+        </CartProvider>
       </UserProvider>
     </>
   );

@@ -7,7 +7,7 @@ interface ProductTitleProps {
 
 const ProductTitle: React.FC<ProductTitleProps> = ({ value }) => {
     return (   
-        <Heading size="h3" className="text-[#555] font-bold">
+        <Heading size="h3" className={`text-[#555] font-bold`}>
             {value}
         </Heading>
     )
